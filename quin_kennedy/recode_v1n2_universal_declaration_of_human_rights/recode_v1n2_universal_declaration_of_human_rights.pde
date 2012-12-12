@@ -21,6 +21,8 @@ void setup(){
     size(686, 820, P2D);//pretty close with Krungthep-12
   } else if (use == 3){
     size(686, 819, P2D);//used with no font specified
+  } else if (use == 4){
+    size(646, 818, P2D);
   }
   noLoop();
 }
@@ -49,6 +51,8 @@ void draw(){
     f = loadFont("Krungthep-12.vlw");
   } else if (use == 3){
     //don't load a font
+  } else if (use == 4){
+    f = loadFont("Menlo-Regular-10.vlw");
   }
   if (f != null){
     t.textFont(f);
@@ -89,12 +93,37 @@ void draw(){
     pixels[k] = color((red(ip)*3/4+.25)*(red(tp)), 
                       (green(ip)*3/4+.25)*(green(tp)), 
                       (blue(ip)*3/4+.25)*(blue(tp)));
+    //extend grayscale to text alpha channel
+    //really setting alpha based on red channel
+    //t.pixels[k] = (((tp << 8) & 0xFF000000) | (tp & 0x00FFFFFF));
+    boolean surrounded = false;
+    if (k < width*(height-1)-1){
+      surrounded = red(t.pixels[k+1]) + red(t.pixels[k+width]) + red(t.pixels[k+width+1]) > (.9*3);
+    } else{
+      surrounded = red(t.pixels[k-1]) + red(t.pixels[k-width]) + red(t.pixels[k-width-1]) > (.9*3);
+    }
+    t.pixels[k] = ((surrounded || red(tp) < .8 || red(pixels[k]) < .2) 
+                    ? 0x00000000 
+                    : ((floor(pow(map(red(pixels[k]), .2, 1., 1., 0.), 1)*255) & 0xFF) << 24) | 0x00FFFFFF) & tp;
   }
   updatePixels();
+  t.updatePixels();
   filter(shade);
   filter(shade);
-  //filter(shade);
-  //filter(shade);
+  filter(shade);
+  filter(shade);
+  pushMatrix();
+  translate(width/2., height/2.);
+  rotate(PI);
+  //rotateX(0);
+  //rotateY(PI);
+  //rotateZ(PI);
+  scale(-1,1);
+  imageMode(CENTER);
+  //blend(t, 0, 0, width, height/2, 0, 0, width, height/2, ADD);
+  //background(0);
+  //image(t, 0, 0);
+  popMatrix();
   //filter(THRESHOLD, .2);//too strong
 }
 

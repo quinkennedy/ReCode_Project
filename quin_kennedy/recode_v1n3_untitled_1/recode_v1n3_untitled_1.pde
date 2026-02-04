@@ -3,7 +3,8 @@ int pixelSize = 2;
 boolean showWarp[] = new boolean[windowSize/pixelSize+1];
 
 void setup(){
-  size(windowSize, windowSize, P2D);
+  //size(windowSize, windowSize, P2D);
+  size(400,400,P2D);
   setupWeft();
   noLoop();
 }

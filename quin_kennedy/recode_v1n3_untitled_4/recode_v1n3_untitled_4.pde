@@ -3,7 +3,8 @@ static final int windowSize = 400;
 static final int tileSize = windowSize/5;
 
 void setup(){
-  size(windowSize,windowSize, P2D);
+  //size(windowSize,windowSize, P2D);
+  size(400,400,P2D);
   createTiles();
   noLoop();
 }

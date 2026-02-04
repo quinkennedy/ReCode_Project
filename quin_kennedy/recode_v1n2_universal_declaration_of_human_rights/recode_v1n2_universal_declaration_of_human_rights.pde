@@ -11,16 +11,19 @@
 //image from: http://www.metro.co.uk/news/841183-photos-around-the-world-in-80-days-competition-winners
 
 void setup(){
+  //must be the first line of code inside setup()
+  size(646/*660*/, 818, P2D);//set for KufiStandardGK-10
+  
   //size(629, 821, P2D);//aspect ratio of piece in PDF
   
   if (use == 0){
-    size(686, 820, P2D);//pretty close with Krungthep-10
+    //size(686, 820, P2D);//pretty close with Krungthep-10
   } else if (use == 1){
-    size(646/*660*/, 818, P2D);//set for KufiStandardGK-10
+    //size(646/*660*/, 818, P2D);//set for KufiStandardGK-10
   } else if (use == 2){
-    size(686, 820, P2D);//pretty close with Krungthep-12
+    //size(686, 820, P2D);//pretty close with Krungthep-12
   } else if (use == 3){
-    size(686, 819, P2D);//used with no font specified
+    //size(686, 819, P2D);//used with no font specified
   }
   noLoop();
 }

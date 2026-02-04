@@ -32,7 +32,8 @@ int[] edgePairs = {0, 1,
 PVector[] endpoints = new PVector[edgePairs.length];
 
 void setup(){
-  size(canvasWidth, canvasHeight, P3D);
+  size(400,400,P3D);
+  windowResize(canvasWidth, canvasHeight);
   noLoop();
 }
 

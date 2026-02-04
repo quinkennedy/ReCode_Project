@@ -24,7 +24,8 @@ static final int windowSize = numTiles*tileSize;
 static final float visualWinSize = numTiles*visualTileSize;
 
 void setup(){
-  size(ceil(visualWinSize), ceil(visualWinSize), P2D);
+  size(400,400,P2D);
+  windowResize(ceil(visualWinSize), ceil(visualWinSize));
   noLoop();
 }
 

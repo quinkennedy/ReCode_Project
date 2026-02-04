@@ -15,7 +15,8 @@ static final float aspectRatio = 670/700.;//taken from reproduction in PDF
 
 void setup(){
   //the combination of P2D, 1.5 stroke, and no smoothing creates an attractive raw look
-  size(floor(canvasSize*aspectRatio), canvasSize, P2D);
+  size(400,400,P2D);
+  windowResize(floor(canvasSize*aspectRatio), canvasSize);
   noLoop();
 }
 

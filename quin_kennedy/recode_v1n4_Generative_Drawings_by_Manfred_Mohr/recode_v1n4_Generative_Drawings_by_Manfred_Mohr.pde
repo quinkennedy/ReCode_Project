@@ -26,7 +26,8 @@ public static final int factorial(int n){
 }
 
 void setup(){
-  size(canvasWidth * (showMirror ? 2 : 1), canvasWidth, P3D);
+  size(400,400,P3D);
+  windowResize(canvasWidth * (showMirror ? 2 : 1), canvasWidth);
   noLoop();
 }
 

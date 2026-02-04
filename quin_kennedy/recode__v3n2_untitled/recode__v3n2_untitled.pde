@@ -19,7 +19,7 @@ static final int gutterSize = floor(tileSize*gutterRelativeSize);
 
 void setup(){
   int actualWinSize = (tileSize+gutterSize)*numTiles+gutterSize;
-  size(actualWinSize, actualWinSize);
+  windowResize(actualWinSize, actualWinSize);
   createTiles();
   noLoop();
 }

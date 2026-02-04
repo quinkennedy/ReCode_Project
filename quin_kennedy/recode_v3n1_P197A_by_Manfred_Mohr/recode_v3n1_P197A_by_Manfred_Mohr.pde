@@ -16,7 +16,8 @@ static final int actualCanvasSize = cellWidth*numCellsWide+gutterWidth*2;
 static final float gutterBleed = .5;
 
 void setup(){
-  size(actualCanvasSize, actualCanvasSize, P3D);
+  size(400,400,P3D);
+  windowResize(actualCanvasSize, actualCanvasSize);
   noLoop();
 }
 

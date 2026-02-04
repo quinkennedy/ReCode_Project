@@ -38,7 +38,7 @@ PFont f;
 boolean wasModifier = false;
 
 void setup(){
-  size(maxLinePixelWidth+hBorder*2, numLines*lineHeight+vertBorder*2);
+  windowResize(maxLinePixelWidth+hBorder*2, numLines*lineHeight+vertBorder*2);
   noLoop();
   f = loadFont("STIXVariants-Bold-15.vlw");//"OriyaSangamMN-15.vlw");//"Raanana-15.vlw");//"LithosPro-Regular-15.vlw");//"OriyaMN-15.vlw");//"KhmerMN-15.vlw""LiHeiPro-15.vlw" "TeluguMN-15.vlw""TeluguMN-Bold-15.vlw""PTSans-Caption-15.vlw""STIXGeneral-Regular-15.vlw"
   textFont(f, 15);
